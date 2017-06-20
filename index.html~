@@ -6,6 +6,8 @@
 <body>
 
 <script type="text/javascript">
-console.log("Hello world!", document.querySelector('link[rel="import"]').import)
+var htmlOfMarkdown = new showdown.Converter()
+var firstEntry = document.querySelector('link[rel="import"]').import.body.innerText
+document.body.innerHTML = htmlOfMarkdown(firstEntry)
 </script>
 </body></html>
