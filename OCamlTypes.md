@@ -103,8 +103,12 @@ val my_bank_statement : bank_statement = {savings = 100.56; checking = 1000.}
 
 (* If you have variables `savings` and `checking` in context, you can use a shorthand... *)
 
-# let savings = 100.56; let checking = 1000.; let my_bank_statement = { savings; checking };;
-val savings : float = 100.56
+# let savings = 100.56;;
+val savings: float = 100.56;;
+# let checking = 1000.;;
+val checking: float = 1000.
+# let my_bank_statement = { savings; checking };;
+val my_bank_statement : bank_statement = {savings = 100.56; checking = 1000.}
 
 # let checking = 1000.;;
 val checking : float = 1000.
