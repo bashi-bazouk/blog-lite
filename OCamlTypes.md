@@ -1,5 +1,5 @@
 ### Primitives
-```
+```ocaml
 (* int *)
 # 117;;
 - : int = 117
@@ -29,7 +29,7 @@
 ```
 
 ### Declaring types
-```
+```ocaml
 (* Type declarations start with the keyword `type`, followed by a name, 
  * followed by an `=` and the type definition. Type declarations are also terminated by a `;;`. *)
 
@@ -48,7 +48,7 @@ val my_bank_balance : dollars = 1100.56
 ```
 
 ### Tuples
-```
+```ocaml
 (* A tupled type is represented by its sub-types, each separated from one another by asterisks. *)
 
 # type my_tuple = int * float * char * string * bool * unit;;
@@ -78,7 +78,7 @@ val denominator : int = 7
 ```
 
 ### Records
-```
+```ocaml
 (* A record type is like a tuple, in that it aggregates a number of sub-types under one name.
  * However, unlike a tuple, each sub-type has a corresponding label.*)
  
@@ -119,7 +119,7 @@ val my_checking : dollars = 1000.
 ```
 
 ### Lists: A Parameterized Type
-```
+```ocaml
 (* Lists are collections of values, separated by semicolons, and delimited by square brackets. 
  * Unlike lists in other languages, OCaml lists must contain values all having the same type. *)
 
@@ -147,7 +147,7 @@ val my_wells_fargo_accounts : bank_statement list =
 ```
 
 ### Function Types
-```
+```ocaml
 (* Function types are represented by two or more sub-types, separated by arrows. *)
 # type statement_constructor = float -> float -> bank_statement
 
@@ -176,7 +176,7 @@ val my_deserializer : string -> bank_statement = <fun>
 ```
 
 ### Inductive Types
-```
+```ocaml
 (* Inductive types consist of subtypes (possibly the same type), labelled by constructors. 
  * Constructors are capitalized. *)
 
