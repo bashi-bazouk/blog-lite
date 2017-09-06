@@ -88,7 +88,7 @@ val denominator : int = 7
  
 # type bank_statement = {
 #   savings: dollars;
-#  checking: dollars
+#   checking: dollars
 # }
 type bank_statement = { savings : dollars; checking : dollars; }
 
