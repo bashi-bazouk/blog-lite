@@ -64,19 +64,6 @@ rule tokenize = parse
   | const as c { CONST(c) }
   | label      { LABEL(l) }
 
-
-{ 
-
-  let from_channel c callback = 
-    callback tokenize (Lexing.from_channel c)
-
-  let from_string s callback = 
-    callback tokenize (Lexing.from_string s)
-
-  let from_function f callback = 
-    callback tokenize (Lexing.from_function f)
-
-}
 ```
 
 ## JSON.ml
