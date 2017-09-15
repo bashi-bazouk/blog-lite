@@ -68,30 +68,21 @@ rule tokenize = parse
 
 ## JSON.ml
 ```ocaml
-type json =
-    Const of string
-  | Array of json list
-  | Dict of (string * json) list
+type json = JSONParser.json
 
-let json_of_lexbuf lexbuf =
-  let rec json_of_parser_json = function
-      JSONParser.Const(c) -> Const(c)
-    | JSONParser.Array(items) ->
-      Array(List.map json_of_parser_json items)
-    | JSONParser.Dict(entries) ->
-      Dict(List.map (fun (s,e) -> (s, json_of_parser_json e)) entries) in
-  json_of_parser_json (JSONParser.json JSONLexer.tokenize lexbuf)
+let json_of_lexbuf (lexbuf: Lexing.lexbuf): json =
+  JSONParser.json JSONLexer.tokenize lexbuf
 
-let json_of_channel c =
+let json_of_channel (c: in_channel): json =
   json_of_lexbuf (Lexing.from_channel c)
 
-let json_of_string s =
-  json_of_lexbuf (Lexing.from_string s)
-
-let json_of_function f =
+let json_of_function (f: bytes -> int -> int): json =
   json_of_lexbuf (Lexing.from_function f)
 
-let rec string_of_json = function
+let json_of_string (s: string): json =
+  json_of_lexbuf (Lexing.from_string s)
+
+let rec string_of_json: json -> string = function
     Const s -> s
   | Array([]) -> "[]"
   | Array(first_json::jsons) ->
