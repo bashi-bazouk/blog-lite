@@ -1,4 +1,4 @@
-# Javascript and Group Theory
+# Javascript
 
 Javascript was invented in 1995 by Brandon Eich, in order to automate HTML presentations in Netscape Navigator. Since then, Javascript interpreters have been built into virtually every internet browser. The language has been standardized by a committee, and receives enhancements and improvements to this day.
 
