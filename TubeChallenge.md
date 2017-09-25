@@ -1,5 +1,5 @@
 
-
+```ocaml
 module type Station = sig
 
   type station =
@@ -280,4 +280,4 @@ module type Station = sig
   val minimum_duration: station list -> int;
 
 end
-
+```
